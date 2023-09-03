@@ -11,6 +11,9 @@ module tt_um_vbhatt_uart_led #( parameter MAX_COUNT = 24'd10_000_000 ) (
     input  wire       clk,      // clock
     input  wire       rst_n     // reset_n - low to reset
 );
+
+    assign uio_oe = 8'b1111_1111;
+    assign uio_out = 8'b1111_1111;
     wire rst= ~rst_n;
     top dut(
         .i(ui_in[0]),
